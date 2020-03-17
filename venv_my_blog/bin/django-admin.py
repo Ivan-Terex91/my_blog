@@ -1,0 +1,5 @@
+#!/home/ivan/Django_projects/my_blog/venv_my_blog/bin/python
+from django.core import management
+
+if __name__ == "__main__":
+    management.execute_from_command_line()
