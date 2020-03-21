@@ -23,7 +23,7 @@ def post_detail(request, year, month, day, post):
     # List of active comments for this post
     comments = post.comments.filter(active=True)
 
-    if request.method == Post:
+    if request.method == "POST":
         # A comment was posted
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -38,7 +38,8 @@ def post_detail(request, year, month, day, post):
 
     return render(request, 'blog/post/detail.html', {'post': post,
                                                      'comments': comments,
-                                                     'comment_form': comment_form})
+                                                     'comment_form': comment_form,
+                                                     })
 
 
 def post_share(request, post_id):
